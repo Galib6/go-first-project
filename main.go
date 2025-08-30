@@ -2,11 +2,14 @@ package main
 
 import "fmt"
 
-func addTwoNumber(a int, b int) int {
-	return a + b
-}
+var (
+	a = 10
+)
 
 func main() {
-	var sum = addTwoNumber(10, 20)
-	fmt.Println(sum)
+	fmt.Println("Hello Init function")
+}
+
+func init() {
+	fmt.Println("I am the first function that executes first")
 }
