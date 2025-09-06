@@ -2,14 +2,25 @@ package main
 
 import "fmt"
 
-var (
-	a = 10
-)
+func call() {
+	var x []int
 
-func main() {
-	fmt.Println("Hello Init function")
+	x = append(x, 10)
+	x = append(x, 20)
+	x = append(x, 30)
+
+	y := x
+
+	y = append(y, 20)
+	y = append(y, 60)
+	y = append(y, 90)
+
+	x[0] = 3
+
+	fmt.Println(x, cap(x))
+	fmt.Println(y, cap(y))
 }
 
-func init() {
-	fmt.Println("I am the first function that executes first")
+func main() {
+	call()
 }
